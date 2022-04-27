@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="light">
+   
+    <ion-title>Sign in User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <form class="test">
+    <img  src="./assets/DevClass1.png">
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="button1" type="submit" (click)="logIn(email, password)" expand="block" >Log in</ion-button>
+        
+      </ion-col>
+    </ion-row>
+   
+    
+    <h2><span>OR</span></h2>
+  
+    <ion-row>
+      <ion-col>
+        <ion-button  (click)="authService.GoogleAuth()" type="submit" expand="block" color="danger">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Sign in with Google
+    </ion-button>
+        
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

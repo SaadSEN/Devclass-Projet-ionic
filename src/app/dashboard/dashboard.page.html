@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" >
+    <img height="49.5" width="191" src="./assets/DevClass1.png">
+  </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+
+
+<ion-card  color="white" *ngFor="let Formations of FormationList; let i=index"  class="ios hydrated">
+ 
+
+  <ion-card-header class="ion-inherit-color ios hydrated">
+     
+      <ion-card-title>{{Formations.Titre}}</ion-card-title>
+      <h5>Course duration: {{Formations.Periode}}</h5>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{Formations.Description}}
+    <ion-row class="ion-align-items-center">
+   <ion-col> <ion-label class="label">{{Formations.Prix }}</ion-label></ion-col>
+   
+     
+     <ion-col size="4" class="ion-text-right"><ion-button class="button1" *ngIf="!Formations.enrolled"    (click)="Confirmation(Formations.id)">
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+      Enroll
+    </ion-button>
+    <ion-button color="dark" *ngIf="Formations.enrolled" >
+      
+      <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+      Enrolled
+    </ion-button></ion-col>
+  </ion-row>
+  </ion-card-content>
+ 
+  
+ 
+</ion-card>
+
+</ion-content>
+
+
